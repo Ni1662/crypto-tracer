@@ -1,93 +1,139 @@
-import { makeStyles, Typography } from '@material-ui/core'
-import React from 'react'
+import { makeStyles, Typography } from "@material-ui/core";
+import React from "react";
 
 const useStyles = makeStyles(() => ({
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
 
-    container: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center"
-    },
+  mainContain: {
+    display: "flex",
+    justifyContent: "space-evenly",
+  },
+  image: {
+    borderRadius: "50%",
+  },
+  "@media (max-width: 930px)": {
     mainContain: {
-        display: "flex",
-        justifyContent: "space-evenly",
+      display: "flex",
+      flexDirection: "column",
+    },
+    container: {
+      padding: 10,
     },
     image: {
-        borderRadius: "50%",
-    }
-
+      height: 200,
+      width: 200,
+    },
+  },
 }));
 
 const Teams = () => {
+  const classes = useStyles();
 
-    const classes = useStyles();
-
-    return (
-        
-        <div>
-            <div>
-                <Typography
-                    variant="h2"
-                    style={{
-                        fontWeight: "bold",
-                        marginBottom: 15,
-                        fontFamily: "Montserrat",
-                        textAlign: "center",
-                        padding: "20px"
-                    }}
-                >
-                    Meet Our Team
-                </Typography>
-            </div>
-            <div className={classes.mainContain}>
-                <div className={classes.container}>
-                    <img src='./amu.jfif' height="300" width="300" alt='' className={classes.image} />
-                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                        <span
-                            style={{
-                                textTransform: "uppercase",
-                                fontSize: 22,
-                                fontWeight: "bold",
-                            }}
-                        >
-                            Amruta
-                        </span>
-                        <span style={{ color: "darkgrey" }}>1234567</span>
-                    </div>
-                </div>
-                <div className={classes.container}>
-                    <img src='./amu.jfif' height="300" width="300" alt='' className={classes.image} />
-                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                        <span
-                            style={{
-                                textTransform: "uppercase",
-                                fontSize: 22,
-                                fontWeight: "bold",
-                            }}
-                        >
-                            Amruta
-                        </span>
-                        <span style={{ color: "darkgrey" }}>1234567</span>
-                    </div>
-                </div>
-                <div className={classes.container}>
-                    <img src='./amu.jfif' height="300" width="300" alt='' className={classes.image} />
-                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                        <span
-                            style={{
-                                textTransform: "uppercase",
-                                fontSize: 22,
-                                fontWeight: "bold",
-                            }}
-                        >
-                            Amruta
-                        </span>
-                        <span style={{ color: "darkgrey" }}>1234567</span>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div>
+      <div>
+        <Typography
+          variant="h2"
+          style={{
+            fontWeight: "bold",
+            marginBottom: 15,
+            fontFamily: "Montserrat",
+            textAlign: "center",
+            padding: "20px",
+          }}
+        >
+          Meet Our Team
+        </Typography>
+      </div>
+      <div className={classes.mainContain}>
+        <div className={classes.container}>
+          <img
+            src="./amu.jfif"
+            height="300"
+            width="300"
+            alt=""
+            className={classes.image}
+          />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <span
+              style={{
+                textTransform: "uppercase",
+                fontSize: 22,
+                fontWeight: "bold",
+              }}
+            >
+              Amruta
+            </span>
+            <span style={{ color: "darkgrey" }}>1234567</span>
+          </div>
         </div>
-    )
-}
+        <div className={classes.container}>
+          <img
+            src="./amu.jfif"
+            height="300"
+            width="300"
+            alt=""
+            className={classes.image}
+          />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <span
+              style={{
+                textTransform: "uppercase",
+                fontSize: 22,
+                fontWeight: "bold",
+              }}
+            >
+              Amruta
+            </span>
+            <span style={{ color: "darkgrey" }}>1234567</span>
+          </div>
+        </div>
+        <div className={classes.container}>
+          <img
+            src="./amu.jfif"
+            height="300"
+            width="300"
+            alt=""
+            className={classes.image}
+          />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <span
+              style={{
+                textTransform: "uppercase",
+                fontSize: 22,
+                fontWeight: "bold",
+              }}
+            >
+              Amruta
+            </span>
+            <span style={{ color: "darkgrey" }}>1234567</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Teams
+export default Teams;

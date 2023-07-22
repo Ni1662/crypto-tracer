@@ -12,6 +12,6 @@ root.render(
     <CryptoContext>
       <App />
     </CryptoContext>
-  </React.StrictMode>
+    </React.StrictMode>
 );
 
