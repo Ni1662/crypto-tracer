@@ -18,6 +18,8 @@ import { CryptoState } from "../CryptoContext";
 import AuthModel from "./Authentication/AuthModel";
 import UserSidebar from "./Authentication/UserSidebar";
 import DrawerComponent from "./Drawer";
+// import Brightness7Icon from "@material-ui/icons/Brightness7";
+// import Brightness4Icon from "@material-ui/icons/Brightness4";
 
 const useStyles = makeStyles(() => ({
   title: {
@@ -26,6 +28,8 @@ const useStyles = makeStyles(() => ({
     fontFamily: "Montserrat",
     fontWeight: "bold",
     cursor: "pointer",
+    justifyContent: "center",
+    alignItems: "center",
   },
   button: {
     fontFamily: "Montserrat",
@@ -49,12 +53,19 @@ const Header = () => {
 
   const { currency, setCurrency, user } = CryptoState();
 
+  // const [darkMode, setDarkMode] = useState(true);
+
+  // const toggleDarkMode = () => {
+  //   setDarkMode(!darkMode);
+  // };
+
   // console.log(currency);
   const darkTheme = createTheme({
     palette: {
       primary: {
         main: "#fff",
       },
+      // type: darkMode ? "dark" : "light",
       type: "dark",
     },
   });
@@ -69,6 +80,11 @@ const Header = () => {
               className={classes.title}
               variant="h6"
             >
+              {/* <img
+                src="logo.svg"
+                alt="logo"
+                style={{ height: 25, width: 25 }}
+              /> */}
               Capitalize
             </Typography>
 
@@ -129,6 +145,14 @@ const Header = () => {
               <MenuItem value={"USD"}>USD</MenuItem>
             </Select>
             {user ? <UserSidebar /> : <AuthModel />}
+
+            {/* <IconButton onClick={toggleDarkMode} color="inherit">
+              {theme.palette.type === "dark" ? (
+                <Brightness7Icon style={{ color: "#fff" }} />
+              ) : (
+                <Brightness4Icon style={{ color: "#000" }} />
+              )}
+            </IconButton> */}
           </Toolbar>
         </Container>
       </AppBar>

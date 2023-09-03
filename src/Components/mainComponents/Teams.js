@@ -57,6 +57,10 @@ const Teams = () => {
             width="300"
             alt=""
             className={classes.image}
+            style={{
+              objectFit: "contain",
+              background: "#4F9D9C"
+            }}
           />
           <div
             style={{

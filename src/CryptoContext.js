@@ -3,7 +3,7 @@ import React, { useContext, createContext, useState, useEffect } from "react";
 import { CoinList } from "./config/api";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "./firebase";
-import { doc, onSnapshot } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
 
 const Crypto = createContext();
 
@@ -19,6 +19,8 @@ const CryptoContext = ({ children }) => {
     type: "success",
   });
   const [watchlist, setWatchlist] = useState([]);
+  const [incomes, setIncomes] = useState([]);
+  const [expenses, setExpenses] = useState([]);
 
   useEffect(() => {
     if (user) {
@@ -57,6 +59,50 @@ const CryptoContext = ({ children }) => {
     else if (currency === "USD") setSymbol("$");
   }, [currency]);
 
+  const addIncomeRecord = async (incomeData) => {
+    try {
+      if (user) {
+        const userIncomesRef = collection(db, 'users', user.uid, 'incomes');
+        await addDoc(userIncomesRef, incomeData);
+      }
+    } catch (error) {
+      console.error('Error adding income record:', error);
+    }
+  };
+
+  const deleteIncomeRecord = async (incomeId) => {
+    try {
+      if (user) {
+        const incomeRef = doc(db, 'users', user.uid, 'incomes', incomeId);
+        await deleteDoc(incomeRef);
+      }
+    } catch (error) {
+      console.error('Error deleting income record:', error);
+    }
+  };
+
+  const addExpenseRecord = async (expenseData) => {
+    try {
+      if (user) {
+        const userExpensesRef = collection(db, 'users', user.uid, 'expenses');
+        await addDoc(userExpensesRef, expenseData);
+      }
+    } catch (error) {
+      console.error('Error adding expense record:', error);
+    }
+  };
+
+  const deleteExpenseRecord = async (expenseId) => {
+    try {
+      if (user) {
+        const expenseRef = doc(db, 'users', user.uid, 'expenses', expenseId);
+        await deleteDoc(expenseRef);
+      }
+    } catch (error) {
+      console.error('Error deleting expense record:', error);
+    }
+  };
+
   return (
     <Crypto.Provider
       value={{
@@ -70,6 +116,12 @@ const CryptoContext = ({ children }) => {
         setAlert,
         user,
         watchlist,
+        incomes,
+        addIncomeRecord,
+        deleteIncomeRecord,
+        expenses,
+        addExpenseRecord,
+        deleteExpenseRecord,
       }}
     >
       {children}
