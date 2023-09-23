@@ -74,7 +74,7 @@ export default function UserSidebar() {
   });
   const { user, setAlert, watchlist, coins, symbol } = CryptoState();
 
-  console.log(watchlist, coins);
+  // console.log(watchlist, coins);
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -134,7 +134,7 @@ export default function UserSidebar() {
               cursor: "pointer",
               backgroundColor: "#00C9C8",
             }}
-            src={user.photoURL}
+            src={user?.photoURL}
             alt={user.displayName || user.email}
           />
           <Drawer

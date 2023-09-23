@@ -10,6 +10,7 @@ import Signup from "./Signup";
 import { auth } from "../../firebase";
 import GoogleButton from "react-google-button";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
 export default function AuthModal() {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const history = useHistory();
 
   const { setAlert } = CryptoState();
 
@@ -67,6 +69,8 @@ export default function AuthModal() {
         });
 
         handleClose();
+        history.push("/onboard");
+        // onboard ? history.push("/") : history.push("/onboard");
       })
       .catch((error) => {
         setAlert({

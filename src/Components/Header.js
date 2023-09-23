@@ -30,6 +30,7 @@ const useStyles = makeStyles(() => ({
     cursor: "pointer",
     justifyContent: "center",
     alignItems: "center",
+    overflowX: "hidden",
   },
   button: {
     fontFamily: "Montserrat",
@@ -125,6 +126,14 @@ const Header = () => {
                   >
                     Contact Us
                   </Button>
+                  {user && (
+                    <Button
+                      onClick={() => history.push("/profile")}
+                      className={classes.button}
+                    >
+                      Profile
+                    </Button>
+                  )}
                 </div>
               </>
             )}

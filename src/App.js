@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import Header from "./Components/Header";
 import Coinpage from "./Pages/Coinpage";
@@ -9,21 +9,35 @@ import Mainpage from "./Pages/Mainpage";
 import Alert from "./Components/Alert";
 import Forex from "./Pages/Forex";
 import About from "./Pages/About";
+import Profile from "./Pages/Profile";
+import { CryptoState } from "./CryptoContext";
+// import { useHistory } from "react-router-dom";
+import OnboardPage from "./Pages/OnboardPage";
+import { useMemo } from "react";
+import Orb from "./Components/Orb";
 
 const userStyles = makeStyles(() => ({
   App: {
     backgroundColor: "#14161a",
     color: "white",
     minHeight: "100vh",
+    overflow: "hidden",
   },
 }));
 
 function App() {
   const classes = userStyles();
+  const { user } = CryptoState();
+  // const history = useHistory();
+
+  const orbMemo = useMemo(() => {
+    return <Orb />;
+  }, []);
 
   return (
     <BrowserRouter>
       <div className={classes.App}>
+        {orbMemo}
         <Header />
         <Route path="/" component={Mainpage} exact />
         <Route path="/about" component={About} exact />
@@ -31,6 +45,12 @@ function App() {
         <Route path="/forex" component={Forex} exact />
         <Route path="/contact" component={Contactpage} exact />
         <Route path="/crypto/coins/:id" component={Coinpage} />
+        <Route path="/onboard" component={OnboardPage} />
+        {user ? (
+          <Route path="/profile" component={Profile} exact />
+        ) : (
+          <Redirect to="/" />
+        )}
       </div>
       <Alert></Alert>
     </BrowserRouter>

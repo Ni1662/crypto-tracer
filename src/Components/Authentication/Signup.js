@@ -3,11 +3,13 @@ import { useState } from "react";
 import { CryptoState } from "../../CryptoContext";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
+import { useHistory } from "react-router-dom";
 
 const Signup = ({ handleClose }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const history = useHistory();
 
   const { setAlert } = CryptoState();
 
@@ -27,7 +29,7 @@ const Signup = ({ handleClose }) => {
         email,
         password
       );
-    //   console.log(result);
+      //   console.log(result);
       setAlert({
         open: true,
         message: `Sign Up Successful. Welcome ${result.user.email}`,
@@ -35,6 +37,7 @@ const Signup = ({ handleClose }) => {
       });
 
       handleClose();
+      history.push("/onboard");
     } catch (error) {
       setAlert({
         open: true,
