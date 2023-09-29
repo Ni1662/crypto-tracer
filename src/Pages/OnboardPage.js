@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { CryptoState } from "../CryptoContext";
 import { useHistory } from "react-router-dom";
 
-const USER_URL = "http://localhost:5000/api/users/";
+const USER_URL = "https://mirror-humble-chameleon.glitch.me/api/users/";
 
 const useStyles = makeStyles({
   container: {

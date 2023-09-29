@@ -5,9 +5,9 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "./firebase";
 import { doc, onSnapshot } from "firebase/firestore";
 
-const USER_URL = "http://localhost:5000/api/users";
-const INCOME_URL = "http://localhost:5000/api/income";
-const EXPENSE_URL = "http://localhost:5000/api/expense";
+const USER_URL = "https://mirror-humble-chameleon.glitch.me/api/users";
+const INCOME_URL = "https://mirror-humble-chameleon.glitch.me/api/income";
+const EXPENSE_URL = "https://mirror-humble-chameleon.glitch.me/api/expense";
 
 const Crypto = createContext();
 
