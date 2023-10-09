@@ -20,7 +20,7 @@ const Orb = () => {
   const OrbStyled = styled.div`
     width: 70vh;
     height: 70vh;
-    position: absolute;
+    position: fixed;
     border-radius: 50%;
     margin-left: -37vh;
     margin-top: -37vh;
@@ -34,6 +34,7 @@ const Orb = () => {
     );
     filter: blur(200px);
     animation: ${moveOrb} 15s alternate linear infinite;
+    z-index: 0;
   `;
   return <OrbStyled>Orb</OrbStyled>;
 };

@@ -44,6 +44,7 @@ function Chart() {
             return amount;
           }),
         ],
+        borderColor: "#66E3A9",
         backgroundColor: "#66E3A9",
         tension: 0.2,
       },
@@ -55,6 +56,7 @@ function Chart() {
             return amount;
           }),
         ],
+        borderColor: "#FF6347",
         backgroundColor: "#FF6347",
         tension: 0.2,
       },

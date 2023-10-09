@@ -18,6 +18,9 @@ import { CryptoState } from "../CryptoContext";
 import AuthModel from "./Authentication/AuthModel";
 import UserSidebar from "./Authentication/UserSidebar";
 import DrawerComponent from "./Drawer";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../Utils/motion";
+
 // import Brightness7Icon from "@material-ui/icons/Brightness7";
 // import Brightness4Icon from "@material-ui/icons/Brightness4";
 
@@ -37,6 +40,7 @@ const useStyles = makeStyles(() => ({
     fontWeight: "bold",
     cursor: "pointer",
     transition: "all 0.6s ease-in-out",
+    color: "white",
     marginLeft: 25,
     "&:hover": {
       backgroundColor: "#00C9C8",
@@ -73,98 +77,118 @@ const Header = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar color="transparent" position="static">
-        <Container>
-          <Toolbar>
-            <Typography
-              onClick={() => history.push("/")}
-              className={classes.title}
-              variant="h6"
-            >
-              {/* <img
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+      >
+        <motion.div variants={fadeIn("down", "tween", 0.5, 1)}>
+          <AppBar
+            color="transparent"
+            position="static"
+            style={{ background: "transparent", boxShadow: "none" }}
+          >
+            <Container>
+              <Toolbar>
+                <Typography
+                  onClick={() => history.push("/")}
+                  className={classes.title}
+                  variant="h6"
+                >
+                  {/* <img
                 src="logo.svg"
                 alt="logo"
                 style={{ height: 25, width: 25 }}
               /> */}
-              Capitalize
-            </Typography>
+                  Capitalize
+                </Typography>
 
-            {/* resp */}
-            {isMobile ? (
-              <DrawerComponent />
-            ) : (
-              <>
-                <div className={classes.nav}>
-                  <Button
-                    onClick={() => history.push("/")}
-                    className={classes.button}
-                  >
-                    Home
-                  </Button>
-                  <Button
-                    onClick={() => history.push("/about")}
-                    className={classes.button}
-                  >
-                    About Us
-                  </Button>
+                {/* resp */}
+                {isMobile ? (
+                  <DrawerComponent />
+                ) : (
+                  <>
+                    <div className={classes.nav}>
+                      <Button
+                        onClick={() => history.push("/")}
+                        className={classes.button}
+                      >
+                        Home
+                      </Button>
+                      <a href="#about">
+                        <Button
+                          // onClick={() => history.push("about")}
+                          // href="#about"
+                          className={classes.button}
+                        >
+                          About Us
+                        </Button>
+                      </a>
 
-                  <Button
-                    onClick={() => history.push("/crypto")}
-                    className={classes.button}
-                  >
-                    Crypto
-                  </Button>
-                  <Button
-                    onClick={() => history.push("/forex")}
-                    className={classes.button}
-                  >
-                    Forex
-                  </Button>
-                  <Button
-                    onClick={() => history.push("/contact")}
-                    className={classes.button}
-                  >
-                    Contact Us
-                  </Button>
-                  {user && (
-                    <Button
-                      onClick={() => history.push("/profile")}
-                      className={classes.button}
-                    >
-                      Profile
-                    </Button>
-                  )}
-                </div>
-              </>
-            )}
+                      <Button
+                        onClick={() => history.push("/crypto")}
+                        className={classes.button}
+                      >
+                        Crypto
+                      </Button>
+                      <Button
+                        onClick={() => history.push("/forex")}
+                        className={classes.button}
+                      >
+                        Forex
+                      </Button>
+                      <Button
+                        onClick={() => history.push("/contact")}
+                        className={classes.button}
+                      >
+                        Contact Us
+                      </Button>
+                      {user && (
+                        <Button
+                          onClick={() => history.push("/profile")}
+                          className={classes.button}
+                        >
+                          Profile
+                        </Button>
+                      )}
+                    </div>
+                  </>
+                )}
 
-            <Select
-              variant="outlined"
-              style={{
-                width: 100,
-                height: 40,
-                marginRight: 15,
-                // {isMobile?marginLeft: 150: marginLeft: 0}
-                marginLeft: isMobile ? 0 : 150,
-              }}
-              value={currency}
-              onChange={(e) => setCurrency(e.target.value)}
-            >
-              <MenuItem value={"INR"}>INR</MenuItem>
-              <MenuItem value={"USD"}>USD</MenuItem>
-            </Select>
-            {user ? <UserSidebar /> : <AuthModel />}
+                <Select
+                  variant="outlined"
+                  style={{
+                    width: 100,
+                    height: 40,
+                    marginRight: 15,
+                    color: "white",
+                    // {isMobile?marginLeft: 150: marginLeft: 0}
+                    marginLeft: isMobile ? 0 : 150,
+                  }}
+                  value={currency}
+                  onChange={(e) => setCurrency(e.target.value)}
+                  // inputLabelProps={{
+                  //   style: { color: "white" },
+                  // }}
+                >
+                  <MenuItem value={"INR"}>INR</MenuItem>
+                  <MenuItem value={"USD"}>USD</MenuItem>
+                </Select>
+                {user ? <UserSidebar /> : <AuthModel />}
 
-            {/* <IconButton onClick={toggleDarkMode} color="inherit">
+                {/* <IconButton onClick={toggleDarkMode} color="inherit">
               {theme.palette.type === "dark" ? (
                 <Brightness7Icon style={{ color: "#fff" }} />
               ) : (
                 <Brightness4Icon style={{ color: "#000" }} />
               )}
             </IconButton> */}
-          </Toolbar>
-        </Container>
-      </AppBar>
+              </Toolbar>
+            </Container>
+          </AppBar>
+        </motion.div>
+      </motion.div>
     </ThemeProvider>
   );
 };

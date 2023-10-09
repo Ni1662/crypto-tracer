@@ -11,7 +11,7 @@ function Expenses() {
 
   useEffect(() => {
     getExpenses(user.uid);
-  }, []);
+  });
   return (
     <ExpenseStyled>
       <InnerLayout>

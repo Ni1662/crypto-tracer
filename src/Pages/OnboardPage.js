@@ -110,7 +110,7 @@ const useStyles = makeStyles({
       borderBottomColor: "white",
     },
     "&:hover .MuiInput-underline:before": {
-      borderBottomColor: "#FCFCD4", // Change the underline color on hover
+      borderBottomColor: "#FCFCD4", 
     },
   },
 });
@@ -202,7 +202,6 @@ const OnboardPage = () => {
           onChange={(e) => setUpdatedBio(e.target.value)}
           className={classes.input}
         />
-        {/* Add more fields for other details you want to update */}
         <Button
           variant="contained"
           color="primary"

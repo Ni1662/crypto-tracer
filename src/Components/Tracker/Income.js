@@ -12,7 +12,7 @@ function Income() {
     // eslint-disable-next-line
     useEffect(() => {
       getIncomes(user.uid);
-    }, []);
+    });
   return (
     <IncomeStyled>
       <InnerLayout>

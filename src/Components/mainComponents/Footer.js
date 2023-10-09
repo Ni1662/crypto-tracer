@@ -1,5 +1,7 @@
 import { makeStyles, Typography } from "@material-ui/core";
 import React from "react";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../../Utils/motion";
 
 const useStyles = makeStyles(() => ({
   footer: {
@@ -46,9 +48,17 @@ const Footer = () => {
   const classes = useStyles();
 
   return (
-    <>
+    <motion.div
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.25 }}
+    >
       <div className={classes.footer}>
-        <div className={classes.container}>
+        <motion.div
+          variants={fadeIn("right", "tween", 0.5, 0.75)}
+          className={classes.container}
+        >
           <Typography
             variant="h5"
             style={{
@@ -64,20 +74,23 @@ const Footer = () => {
           <div className={classes.info}>
             <div>niteshkumar.nk649@gmail.com </div>
             &nbsp;&nbsp;
-            <div>Nitesh Agrawal: +91 9326588651 </div>
+            <div>Nitesh Agrawal </div>
           </div>
           <div className={classes.info}>
-            <div>niteshkumar.nk649@gmail.com</div>
+            <div>bodhankaramruta@gmail.com@gmail.com</div>
             &nbsp;&nbsp;
-            <div>Nitesh Agrawal: +91 9326588651 </div>
+            <div>Amruta Bodhankar</div>
           </div>
           <div className={classes.info}>
-            <div>niteshkumar.nk649@gmail.com</div>
+            <div>banmol241@gmail.com </div>
             &nbsp;&nbsp;
-            <div>Nitesh Agrawal: +91 9326588651 </div>
+            <div>Anmol Bajaj</div>
           </div>
-        </div>
-        <div className={classes.container}>
+        </motion.div>
+        <motion.div
+          variants={fadeIn("left", "tween", 0.5, 0.75)}
+          className={classes.container}
+        >
           <Typography
             variant="h5"
             style={{
@@ -91,14 +104,19 @@ const Footer = () => {
             Address:
           </Typography>
           <div>
-            The World Of One Piece Is Populated By Humans And Many Other Races,
-            Such As Dwarves, Fish-Men, And Giants. It Is Covered By Two Vast
-            Oceans,
+            TCET, A-Block, Gate No 5, Thakur Educational Campus, Shyamnarayan
+            Thakur Rd, Thakur Village, Kandivali East, Mumbai, Maharashtra
+            400101
           </div>
-        </div>
+        </motion.div>
       </div>
-      <div className={classes.copyright}>Copyright © Capitalize 2023</div>
-    </>
+      <motion.div
+        variants={fadeIn("up", "tween", 0.5, 0.75)}
+        className={classes.copyright}
+      >
+        Copyright © Capitalize 2023
+      </motion.div>
+    </motion.div>
   );
 };
 

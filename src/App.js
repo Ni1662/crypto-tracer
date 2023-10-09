@@ -18,7 +18,7 @@ import Orb from "./Components/Orb";
 
 const userStyles = makeStyles(() => ({
   App: {
-    backgroundColor: "#14161a",
+    backgroundColor: "#050816",
     color: "white",
     minHeight: "100vh",
     overflow: "hidden",

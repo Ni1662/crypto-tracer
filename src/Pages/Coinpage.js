@@ -104,11 +104,11 @@ const Coinpage = () => {
         type: "success",
       });
     } catch (error) {
-        setAlert({
-            open: true,
-            message: error.message,
-            type: "error",
-        })
+      setAlert({
+        open: true,
+        message: error.message,
+        type: "error",
+      });
     }
   };
 
@@ -143,8 +143,7 @@ const Coinpage = () => {
         <img
           src={coin?.image.large}
           alt={coin?.name}
-          height="200"
-          style={{ marginBottom: 20 }}
+          style={{ marginBottom: 20, height: 200, zIndex: 2 }}
         />
         <Typography variant="h3" className={classes.heading}>
           {coin?.name}
