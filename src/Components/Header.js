@@ -20,6 +20,7 @@ import UserSidebar from "./Authentication/UserSidebar";
 import DrawerComponent from "./Drawer";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../Utils/motion";
+import { useLocation } from "react-router-dom";
 
 // import Brightness7Icon from "@material-ui/icons/Brightness7";
 // import Brightness4Icon from "@material-ui/icons/Brightness4";
@@ -48,6 +49,11 @@ const useStyles = makeStyles(() => ({
       transform: "scale(0.95)",
     },
   },
+  activeButton: {
+    backgroundColor: "#00C9C8",
+    color: "black",
+    transform: "scale(0.95)",
+  },
 }));
 
 const Header = () => {
@@ -57,6 +63,8 @@ const Header = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const { currency, setCurrency, user } = CryptoState();
+
+  const location = useLocation();
 
   // const [darkMode, setDarkMode] = useState(true);
 
@@ -112,7 +120,7 @@ const Header = () => {
                     <div className={classes.nav}>
                       <Button
                         onClick={() => history.push("/")}
-                        className={classes.button}
+                        className={`${classes.button} ${location.pathname === "/" ? classes.activeButton : ""}`}
                       >
                         Home
                       </Button>
@@ -120,7 +128,7 @@ const Header = () => {
                         <Button
                           // onClick={() => history.push("about")}
                           // href="#about"
-                          className={classes.button}
+                          className={`${classes.button} ${location.pathname === "/#about" ? classes.activeButton : ""}`}
                         >
                           About Us
                         </Button>
@@ -128,29 +136,37 @@ const Header = () => {
 
                       <Button
                         onClick={() => history.push("/crypto")}
-                        className={classes.button}
+                        className={`${classes.button} ${location.pathname === "/crypto" ? classes.activeButton : ""}`}
                       >
                         Crypto
                       </Button>
                       <Button
                         onClick={() => history.push("/forex")}
-                        className={classes.button}
+                        className={`${classes.button} ${location.pathname === "/forex" ? classes.activeButton : ""}`}
                       >
                         Forex
                       </Button>
                       <Button
                         onClick={() => history.push("/contact")}
-                        className={classes.button}
+                        className={`${classes.button} ${location.pathname === "/contact" ? classes.activeButton : ""}`}
                       >
                         Contact Us
                       </Button>
                       {user && (
-                        <Button
-                          onClick={() => history.push("/profile")}
-                          className={classes.button}
-                        >
-                          Profile
-                        </Button>
+                        <>
+                          <Button
+                            onClick={() => history.push("/news")}
+                            className={`${classes.button} ${location.pathname === "/news" ? classes.activeButton : ""}`}
+                          >
+                            News
+                          </Button>
+                          <Button
+                            onClick={() => history.push("/profile")}
+                            className={`${classes.button} ${location.pathname === "/profile" ? classes.activeButton : ""}`}
+                          >
+                            Profile
+                          </Button>
+                        </>
                       )}
                     </div>
                   </>

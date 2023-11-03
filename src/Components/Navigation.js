@@ -15,7 +15,7 @@ const NavStyled = styled.nav`
     rgba(21, 58, 114, 0.5),
     rgba(21, 58, 114, 0.3)
   );
-  border: 3px solid #00c9c8;
+  border: 3px solid #4F9D9C;
   backdrop-filter: blur(4.5px);
   border-radius: 32px;
   display: flex;

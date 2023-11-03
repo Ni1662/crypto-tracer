@@ -6,6 +6,7 @@ import Income from "../Components/Tracker/Income";
 import Expenses from "../Components/Tracker/Expenses";
 import styled from "styled-components";
 import UserProfile from "../Components/Tracker/UserProfile";
+import CryptoWishlist from "../Components/Tracker/CryptoWishlist";
 
 const Profile = () => {
   const [active, setActive] = useState(1);
@@ -20,6 +21,8 @@ const Profile = () => {
         return <Income />;
       case 4:
         return <Expenses />;
+      case 5:
+        return <CryptoWishlist />;
       default:
         return <Dashboard />;
     }
@@ -45,7 +48,7 @@ const ProStyled = styled.div`
       rgba(21, 58, 114, 0.5),
       rgba(21, 58, 114, 0.3)
     );
-    border: 3px solid #00c9c8;
+    border: 3px solid #4F9D9C;
     backdrop-filter: blur(4.5px);
     border-radius: 32px;
     overflow-x: hidden;

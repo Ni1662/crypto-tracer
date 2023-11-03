@@ -15,6 +15,7 @@ import { CryptoState } from "./CryptoContext";
 import OnboardPage from "./Pages/OnboardPage";
 import { useMemo } from "react";
 import Orb from "./Components/Orb";
+import News from "./Pages/News";
 
 const userStyles = makeStyles(() => ({
   App: {
@@ -47,7 +48,10 @@ function App() {
         <Route path="/crypto/coins/:id" component={Coinpage} />
         <Route path="/onboard" component={OnboardPage} />
         {user ? (
+          <>
+          <Route path="/news" component={News} exact />
           <Route path="/profile" component={Profile} exact />
+          </>
         ) : (
           <Redirect to="/" />
         )}
