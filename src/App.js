@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
-import "./App.css";
+// import "./App.css";
 import Header from "./Components/Header";
 import Coinpage from "./Pages/Coinpage";
 import Contactpage from "./Pages/Contactpage";
@@ -37,7 +37,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className={classes.App}>
+      <div className={`${classes.App}`}>
         {orbMemo}
         <Header />
         <Route path="/" component={Mainpage} exact />

@@ -134,7 +134,7 @@ export default function UserSidebar() {
               cursor: "pointer",
               backgroundColor: "#00C9C8",
             }}
-            src={user?.photoURL}
+            src={user?.photoURL || "/assets/icons/profile-placeholder.svg"}
             alt={user.displayName || user.email}
           />
           <Drawer

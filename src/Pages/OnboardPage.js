@@ -4,7 +4,10 @@ import React, { useEffect, useState } from "react";
 import { CryptoState } from "../CryptoContext";
 import { useHistory } from "react-router-dom";
 
-const USER_URL = "https://mirror-humble-chameleon.glitch.me/api/users/";
+const USER_URL = "https://crypto-backend-roan.vercel.app/api/users/";
+
+// const USER_URL = "https://mirror-humble-chameleon.glitch.me/api/users/";
+
 
 const useStyles = makeStyles({
   container: {
@@ -179,7 +182,7 @@ const OnboardPage = () => {
       <Box className={classes.form}>
         <Avatar
           className={classes.picture}
-          src={user?.photoURL}
+          src={user?.photoURL || "/assets/icons/profile-placeholder.svg"}
           alt={user?.displayName || user?.email}
         />
         <TextField

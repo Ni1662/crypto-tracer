@@ -1,6 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&family=Poppins:wght@200;300&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border list-none p-0 m-0 scroll-smooth custom-scrollbar;
+  }
+
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    border-radius: 2px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #09090a;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #5c5c7b;
+    border-radius: 50px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #7878a3;
+  }
+
+  .common-container {
+    @apply custom-scrollbar;
+  }
+}
 
 .blue-gradient {
   background: #00c9c8;
@@ -30,5 +64,13 @@
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backgroundGradient {
-  background-image: linear-gradient(to right top, #009292, #009f9f, #00adad, #00bbba, #00c9c8);
+  background-image: linear-gradient(
+    to right top,
+    #009292,
+    #009f9f,
+    #00adad,
+    #00bbba,
+    #00c9c8
+  );
 }
+

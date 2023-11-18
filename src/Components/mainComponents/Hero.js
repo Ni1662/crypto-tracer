@@ -23,7 +23,7 @@ const Hero = () => {
           className={`${styles.paddingX} top-[120px] max-w-7xl mx-auto flex flex-col items-start gap-5`}
         >
           <div className="bg-[#0099b0] py-2 px-3 rounded-full text-base text-gray-200 hover:text-white flex items-center ">
-            <img src="./dollar.svg" alt="dollar" className="pr-1" />
+            <img src="/assets/icons/dollar.svg" alt="dollar" className="pr-1" />
             Discover a new ways to enjoy your World!
           </div>
           <div className="mx-auto flex flex-row items-start gap-5">
@@ -59,7 +59,7 @@ const Hero = () => {
           </div>
         </div>
         <motion.img
-          src="./bank.png"
+          src="/assets/hero/bank.png"
           alt="bank"
           className="hidden md:block h-[400px] object-cover z-10 relative"
           variants={fadeIn("up", "tween", 0.3, 1)}

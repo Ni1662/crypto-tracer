@@ -6,7 +6,7 @@ import { staggerContainer, textVariant } from "../../Utils/motion";
 
 const useStyles = makeStyles(() => ({
   banner: {
-    backgroundImage: "url(./banner2.jpg)",
+    backgroundImage: "url(/assets/hero/banner2.jpg)",
   },
   bannerContent: {
     height: 400,

@@ -26,7 +26,7 @@ const AboutUs = () => {
         </motion.div>
       </div>
       <motion.img
-        src="./solution.png"
+        src="/assets/solution.png"
         alt="solution"
         className="object-cover h-[auto] md:h-[500px]"
         variants={fadeIn("up", "tween", 0.3, 1)}

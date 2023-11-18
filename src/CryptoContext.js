@@ -5,9 +5,16 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "./firebase";
 import { doc, onSnapshot } from "firebase/firestore";
 
-const USER_URL = "https://mirror-humble-chameleon.glitch.me/api/users";
-const INCOME_URL = "https://mirror-humble-chameleon.glitch.me/api/income";
-const EXPENSE_URL = "https://mirror-humble-chameleon.glitch.me/api/expense";
+const USER_URL = "https://crypto-backend-roan.vercel.app/api/users";
+const INCOME_URL = "https://crypto-backend-roan.vercel.app/api/income";
+const EXPENSE_URL = "https://crypto-backend-roan.vercel.app/api/expense";
+
+// const USER_URL = "https://mirror-humble-chameleon.glitch.me/api/users";
+// const INCOME_URL = "https://mirror-humble-chameleon.glitch.me/api/income";
+// const EXPENSE_URL = "https://mirror-humble-chameleon.glitch.me/api/expense";
+
+// https://crypto-backend-roan.vercel.app/
+// https://mirror-humble-chameleon.glitch.me/
 
 const Crypto = createContext();
 
@@ -39,7 +46,7 @@ const CryptoContext = ({ children }) => {
 
       var unsubscribe = onSnapshot(coinRef, (coin) => {
         if (coin.exists()) {
-          console.log(coin.data().coins);
+          // console.log(coin.data().coins);
           setWatchlist(coin.data().coins);
         } else {
           console.log("No Items in Watchlist");

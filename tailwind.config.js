@@ -15,9 +15,9 @@ module.exports = {
         card: "0px 35px 120px -15px #211e35",
       },
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/herobg.png')",
-        "wave-shap": "url('/src/assets/wave-shap.png')",
-        "pattern": "url('/src/assets/pattern.png')"
+        "hero-pattern": "url('/public/assets/hero/herobg.png')",
+        "wave-shap": "url('/public/assets/hero/wave-shap.png')",
+        "pattern": "url('/public/assets/hero/pattern.png')"
       },
     },
   },

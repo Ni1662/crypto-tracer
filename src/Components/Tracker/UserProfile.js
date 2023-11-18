@@ -11,7 +11,7 @@ const UserProfile = () => {
     <UserStyled>
       <div className="user-pro">
         <div className="user-con">
-          <img src={user?.photoURL} alt="" />
+        <img src={user.photoURL || "/assets/icons/profile-placeholder.svg"} alt="profile" />
           <div className="text">
             <h2>{userinfo?.name}</h2>
             <p>{userinfo?.username}</p>

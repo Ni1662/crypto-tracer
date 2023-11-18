@@ -146,7 +146,7 @@ const FollowUs = () => {
     <>
     <Partition />
       <motion.h1 className={classes.head} variants={textVariant()}>Follow Us Social Media</motion.h1>
-      <motion.div className={classes.social} variants={fadeIn("up", "tween", 0.5, 0.75)}>
+      <motion.div className={`${classes.social}`} variants={fadeIn("up", "tween", 0.5, 0.75)}>
         <FacebookIcon className={classes.fac} />
         <TwitterIcon className={classes.twi} />
         <WhatsAppIcon className={classes.what} />

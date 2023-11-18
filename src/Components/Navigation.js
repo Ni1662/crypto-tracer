@@ -107,7 +107,7 @@ function Navigation({ active, setActive }) {
   return (
     <NavStyled>
       <div className="user-con">
-        <img src={user?.photoURL} alt="" />
+        <img src={user?.photoURL || "/assets/icons/profile-placeholder.svg"}  alt="profile" />
         <div className="text">
           <h2>{user?.displayName}</h2>
           <p>{userinfo?.username}</p>

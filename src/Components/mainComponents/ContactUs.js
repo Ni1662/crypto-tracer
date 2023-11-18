@@ -47,7 +47,7 @@ const ContactUs = () => {
           Contact With Us
         </h2>
         <p
-          className={`${styles.sectionSubText} flex items-center text-center px-60 py-2 `}
+          className={`${styles.sectionSubText} flex items-center text-center sm:px-60 py-2 `}
         >
           Feel free to reach out to us with any questions, feedback, or
           inquiries. Our team is here to assist you and provide the information
@@ -93,10 +93,13 @@ const ContactUs = () => {
         />
       </motion.div>
       <motion.div
-        className="mx-40 mt-10 "
+        className="sm:mx-40 mx-20 mt-10 "
         variants={fadeIn("up", "tween", 0.9, 0.75)}
       >
-        <Button className={`text-white font-semibold p-2 px-4`} style={{ backgroundColor: "#00C9C8" }}>
+        <Button
+          className={`text-white font-semibold p-2 px-4`}
+          style={{ backgroundColor: "#00C9C8" }}
+        >
           Send Message
         </Button>
       </motion.div>
