@@ -34,7 +34,6 @@ const useStyles = makeStyles(() => ({
     cursor: "pointer",
     justifyContent: "center",
     alignItems: "center",
-    overflowX: "hidden",
   },
   button: {
     fontFamily: "Montserrat",
@@ -101,14 +100,15 @@ const Header = () => {
               <Toolbar>
                 <Typography
                   onClick={() => history.push("/")}
-                  className={classes.title}
+                  className={`${classes.title} flex gap-2 `}
                   variant="h6"
                 >
-                  {/* <img
-                src="logo.svg"
-                alt="logo"
-                style={{ height: 25, width: 25 }}
-              /> */}
+                  <img
+                    src="/assets/icons/logo.svg"
+                    alt="logo"
+                    width={28}
+                    height={28}
+                  />
                   Capitalize
                 </Typography>
 
@@ -120,7 +120,9 @@ const Header = () => {
                     <div className={classes.nav}>
                       <Button
                         onClick={() => history.push("/")}
-                        className={`${classes.button} ${location.pathname === "/" ? classes.activeButton : ""}`}
+                        className={`${classes.button} ${
+                          location.pathname === "/" ? classes.activeButton : ""
+                        }`}
                       >
                         Home
                       </Button>
@@ -128,7 +130,11 @@ const Header = () => {
                         <Button
                           // onClick={() => history.push("about")}
                           // href="#about"
-                          className={`${classes.button} ${location.pathname === "/#about" ? classes.activeButton : ""}`}
+                          className={`${classes.button} ${
+                            location.pathname === "/#about"
+                              ? classes.activeButton
+                              : ""
+                          }`}
                         >
                           About Us
                         </Button>
@@ -136,19 +142,31 @@ const Header = () => {
 
                       <Button
                         onClick={() => history.push("/crypto")}
-                        className={`${classes.button} ${location.pathname === "/crypto" ? classes.activeButton : ""}`}
+                        className={`${classes.button} ${
+                          location.pathname === "/crypto"
+                            ? classes.activeButton
+                            : ""
+                        }`}
                       >
                         Crypto
                       </Button>
                       <Button
                         onClick={() => history.push("/forex")}
-                        className={`${classes.button} ${location.pathname === "/forex" ? classes.activeButton : ""}`}
+                        className={`${classes.button} ${
+                          location.pathname === "/forex"
+                            ? classes.activeButton
+                            : ""
+                        }`}
                       >
                         Forex
                       </Button>
                       <Button
                         onClick={() => history.push("/contact")}
-                        className={`${classes.button} ${location.pathname === "/contact" ? classes.activeButton : ""}`}
+                        className={`${classes.button} ${
+                          location.pathname === "/contact"
+                            ? classes.activeButton
+                            : ""
+                        }`}
                       >
                         Contact Us
                       </Button>
@@ -156,13 +174,21 @@ const Header = () => {
                         <>
                           <Button
                             onClick={() => history.push("/news")}
-                            className={`${classes.button} ${location.pathname === "/news" ? classes.activeButton : ""}`}
+                            className={`${classes.button} ${
+                              location.pathname === "/news"
+                                ? classes.activeButton
+                                : ""
+                            }`}
                           >
                             News
                           </Button>
                           <Button
                             onClick={() => history.push("/profile")}
-                            className={`${classes.button} ${location.pathname === "/profile" ? classes.activeButton : ""}`}
+                            className={`${classes.button} ${
+                              location.pathname === "/profile"
+                                ? classes.activeButton
+                                : ""
+                            }`}
                           >
                             Profile
                           </Button>

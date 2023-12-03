@@ -38,7 +38,7 @@ const Services = () => {
     <>
       <Partition />
       <motion.div variants={textVariant()}>
-        <h2 className={`${styles.sectionHeadText} flex justify-center`}>
+        <h2 className={`${styles.sectionHeadText} flex justify-center `}>
           Our Core Services
         </h2>
         <p

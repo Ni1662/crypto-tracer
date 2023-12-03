@@ -33,7 +33,7 @@ const Hero = () => {
             </div>
             <div>
               <motion.h1
-                className={`${styles.heroHeadText} text-white `}
+                className={`${styles.heroHeadText} text-white  `}
                 variants={textVariant(0.2)}
               >
                 Powerful investment &<br /> Trading{" "}

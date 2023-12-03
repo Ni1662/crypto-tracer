@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core";
+// import { makeStyles } from "@material-ui/core";
 import { BrowserRouter, Route, Redirect } from "react-router-dom";
 // import "./App.css";
 import Header from "./Components/Header";
@@ -17,17 +17,17 @@ import { useMemo } from "react";
 import Orb from "./Components/Orb";
 import News from "./Pages/News";
 
-const userStyles = makeStyles(() => ({
-  App: {
-    backgroundColor: "#050816",
-    color: "white",
-    minHeight: "100vh",
-    overflow: "hidden",
-  },
-}));
+// const userStyles = makeStyles(() => ({
+//   App: {
+//     backgroundColor: "#050816",
+//     color: "white",
+//     minHeight: "100vh",
+//     overflow: "hidden",
+//   },
+// }));
 
 function App() {
-  const classes = userStyles();
+  // const classes = userStyles();
   const { user } = CryptoState();
   // const history = useHistory();
 
@@ -37,7 +37,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className={`${classes.App}`}>
+      <div className={`bg-[#050816] text-white min-h-screen overflow-hidden `}>
         {orbMemo}
         <Header />
         <Route path="/" component={Mainpage} exact />
