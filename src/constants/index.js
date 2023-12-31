@@ -72,4 +72,49 @@ const teams = [
   },
 ];
 
-export { services, teams };
+const currencies = [
+  {
+    value: "INR",
+    label: "Indian Rupee",
+    img: "/assets/flag/INR.svg",
+    description:
+      "The Indian Rupee is the currency of India. Our currency rankings show that the most popular Indian Rupee exchange rate is the INR to USD rate. The currency code for Rupees is INR, and the currency symbol is ₹. Above, you'll find Indian Rupee rates and a currency converter.",
+  },
+  {
+    value: "EUR",
+    label: "Euro",
+    img: "/assets/flag/EUR.svg",
+    description:
+      "The Euro is the currency of Euro Member Countries. Our currency rankings show that the most popular Euro exchange rate is the EUR to USD rate. The currency code for Euros is EUR, and the currency symbol is €. Above, you'll find Euro rates and a currency converter.",
+  },
+  {
+    value: "USD",
+    label: "US Dollar",
+    img: "/assets/flag/USD.svg",
+    description:
+      "The US Dollar is the currency of United States. Our currency rankings show that the most popular US Dollar exchange rate is the USD to EUR rate. The currency code for Dollars is USD, and the currency symbol is $. Above, you'll find US Dollar rates and a currency converter.",
+  },
+  {
+    value: "GBP",
+    label: "British Pound",
+    img: "/assets/flag/GBP.svg",
+    description:
+      "The British Pound is the currency of United Kingdom. Our currency rankings show that the most popular British Pound exchange rate is the GBP to USD rate. The currency code for Pounds is GBP, and the currency symbol is £. Above, you'll find British Pound rates and a currency converter.",
+  },
+  {
+    value: "TRY",
+    label: "Turkish Lira",
+    img: "/assets/flag/TRY.svg",
+    description:
+      "The Turkish Lira is the currency of Turkey. Our currency rankings show that the most popular Turkish Lira exchange rate is the TRY to USD rate. The currency code for Lira is TRY, and the currency symbol is ₺. Above, you'll find Turkish Lira rates and a currency converter.",
+  },
+  {
+    value: "AUD",
+    label: "Australian Dollar",
+    img: "/assets/flag/AUD.svg",
+    description:
+      "The Australian Dollar is the currency of Australia. Our currency rankings show that the most popular Australian Dollar exchange rate is the AUD to USD rate. The currency code for Dollars is AUD, and the currency symbol is $. Above, you'll find Australian Dollar rates and a currency converter.",
+  },
+];
+
+export { services, teams, currencies };

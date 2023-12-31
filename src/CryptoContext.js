@@ -19,10 +19,15 @@ const EXPENSE_URL = "https://crypto-backend-roan.vercel.app/api/expense";
 const Crypto = createContext();
 
 const CryptoContext = ({ children }) => {
-  const [onboard, setOnboard] = useState(false);
+  // crypto coin
   const [currency, setCurrency] = useState("INR");
   const [symbol, setSymbol] = useState("₹");
   const [coins, setCoins] = useState([]);
+  // forex (Foreign Exchange)
+  const [baseCurrency, setBaseCurrency] = useState("INR");
+  const [targetCurrency, setTargetCurrency] = useState("USD");
+  // user and profile auth
+  const [onboard, setOnboard] = useState(false);
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
   const [userinfo, setUserinfo] = useState(null);
@@ -275,6 +280,10 @@ const CryptoContext = ({ children }) => {
         totalExpense,
         totalBalance,
         transactionHistory,
+        baseCurrency,
+        setBaseCurrency,
+        targetCurrency,
+        setTargetCurrency
       }}
     >
       {children}

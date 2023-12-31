@@ -1,7 +1,10 @@
 import React from "react";
+import ForexBanner from "../Components/Forex/ForexBanner";
 
 const Forex = () => {
-  return <div>Forex</div>;
+  return <>
+    <ForexBanner />
+  </>;
 };
 
 export default Forex;

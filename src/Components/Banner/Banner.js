@@ -37,7 +37,7 @@ const Banner = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={classes.banner}
+      className="bg-banner"
     >
       <Container className={classes.bannerContent}>
         <motion.div variants={textVariant()} className={classes.tagline}>

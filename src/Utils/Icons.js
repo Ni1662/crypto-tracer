@@ -30,3 +30,4 @@ export const circle = <i className="fa-solid fa-circle-dot"></i>
 export const insta = <i class='fab fa-instagram'></i>
 export const fb = <i class='fab fa-facebook-f'></i>
 export const linkedin = <i class='fab fa-linkedin'></i>
+export const exchange = <i class='fas fa-money-bill-transfer'></i>

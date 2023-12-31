@@ -13,11 +13,14 @@ module.exports = {
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
+        card1: "21px 21px 50px #080613, -21px -21px 50px #221a4d",
       },
       backgroundImage: {
         "hero-pattern": "url('/public/assets/hero/herobg.png')",
         "wave-shap": "url('/public/assets/hero/wave-shap.png')",
-        "pattern": "url('/public/assets/hero/pattern.png')"
+        pattern: "url('/public/assets/hero/pattern.png')",
+        banner: "url('/public/assets/hero/banner2.jpg')",
+        banner3: "url('/public/assets/hero/banner3.png')",
       },
     },
   },
