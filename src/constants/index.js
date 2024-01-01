@@ -1,12 +1,3 @@
-// import {
-//   crypto,
-//   news,
-//   prediction,
-//   stock,
-//   tracking,
-//   wishlist,
-// } from "../assets";
-
 const services = [
   {
     icon: "/assets/services/crypto.png",

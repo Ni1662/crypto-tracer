@@ -8,7 +8,7 @@ import {
   ThemeProvider,
   createTheme,
 } from "@material-ui/core";
-import { ForexDate } from "../../config/data";
+import { ForexDate, calculateDateRange } from "../../config/data";
 import SelectButton from "../SelectButton";
 import { Line } from "react-chartjs-2";
 import { CategoryScale, registerables } from "chart.js";
@@ -25,6 +25,10 @@ const ExChart = ({ date }) => {
   const [percentageChange, setPercentageChange] = useState(null);
 
   const [value, setValue] = useState({});
+
+  // const period = '24hr'; // You can change this to '30d', '3mo', '1yr', or any other supported period
+  const dateRange = calculateDateRange(period);
+  console.log(dateRange);
 
   useEffect(() => {
     const fetchData = async () => {

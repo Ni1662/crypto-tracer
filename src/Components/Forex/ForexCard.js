@@ -22,10 +22,19 @@ const ForexCard = () => {
         return <ForexConvert />;
     }
   };
+
+  const handleViewChart = () => {
+    setActive(2);
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
-      <div className="w-full h-auto min-h-[300px] rounded-xl bg-tertiary shadow-card1">
+      <div className="w-full h-auto min-h-[300px] rounded-xl bg-tertiary shadow-card1 border-2 border-[#606099]">
         <ForexNavigation active={active} setActive={setActive} />
+        {/* <div className="h-[2px] w-full bg-[#606099]" /> */}
+
         <main className="z-10">{displayData()}</main>
       </div>
       <div>
@@ -39,6 +48,13 @@ const ForexCard = () => {
           Currency Convert Historical Chart
         </h1>
         <ExChart date={false} />
+        <button
+          type="submit"
+          className="shad-button_primary font-semibold flex justify-center "
+          onClick={handleViewChart}
+        >
+          View full Chart
+        </button>
       </div>
       <div>
         <h1 className={`${styles.heroHeadText} text-white mt-10 `}>

@@ -75,7 +75,7 @@ const ConvertTable = () => {
             ].label
           }
         </h1>
-        <TableContainer className="">
+        <TableContainer className=" rounded-lg border-[#00C9C8] border-2">
           {isLoading ? (
             <LinearProgress style={{ backgroundColor: "#00C9C8" }} />
           ) : (
@@ -130,7 +130,7 @@ const ConvertTable = () => {
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody>
+              <TableBody >
                 {firstTable !== null &&
                   amountsToConvert.map((amount, index) => (
                     <TableRow
@@ -170,7 +170,7 @@ const ConvertTable = () => {
             ].label
           }
         </h1>
-        <TableContainer className="">
+        <TableContainer className=" rounded-lg border-[#00C9C8] border-2">
           {isLoading ? (
             <LinearProgress style={{ backgroundColor: "#00C9C8" }} />
           ) : (

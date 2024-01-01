@@ -47,6 +47,8 @@ const ForexConvert = () => {
     }
   }, [exchangeRates, targetCurrency]);
 
+  
+
   return (
     <div className="m-10">
       <div className="flex justify-around">
@@ -80,7 +82,11 @@ const ForexConvert = () => {
             {currencies.map((currency) => (
               <>
                 <option key={currency.value} value={currency.value}>
-                  <img src={currency.img} alt="img" height={20} width={20} />
+                  <img
+                    src={currency.img}
+                    alt="img"
+                    className="mr-2 h-5 w-5 object-cover"
+                  />
                   {currency.label}
                 </option>
               </>
@@ -107,8 +113,12 @@ const ForexConvert = () => {
             </option>
             {currencies.map((currency) => (
               <>
-                {/* <img src={currency.img} alt="img" /> */}
                 <option key={currency.value} value={currency.value}>
+                  <img
+                    src={currency.img}
+                    alt="img"
+                    className="mr-2 h-5 w-5 object-cover"
+                  />
                   {currency.label}
                 </option>
               </>
