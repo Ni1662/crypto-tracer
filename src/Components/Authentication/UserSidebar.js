@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import { Avatar, Button } from "@material-ui/core";
 import { CryptoState } from "../../CryptoContext";
 import { signOut } from "firebase/auth";
 import { auth, db } from "../../firebase";
-// import { numberWithCommas } from "../CoinsTable";
 import { AiFillDelete } from "react-icons/ai";
 import { doc, setDoc } from "firebase/firestore";
 import { numberWithCommas } from "../Banner/Carousel";
@@ -74,7 +73,8 @@ export default function UserSidebar() {
   });
   const { user, setAlert, watchlist, coins, symbol } = CryptoState();
 
-  // console.log(watchlist, coins);
+  // Use useRef for the Drawer element
+  const drawerRef = useRef(null);
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -85,6 +85,15 @@ export default function UserSidebar() {
     }
 
     setState({ ...state, [anchor]: open });
+
+    // Use ref to open/close the drawer
+    if (drawerRef.current) {
+      if (open) {
+        drawerRef.current.style.display = "block";
+      } else {
+        drawerRef.current.style.display = "none";
+      }
+    }
   };
 
   const logOut = () => {
@@ -92,7 +101,7 @@ export default function UserSidebar() {
     setAlert({
       open: true,
       type: "success",
-      message: "Logout Successfull !",
+      message: "Logout Successful!",
     });
 
     toggleDrawer();
@@ -109,7 +118,7 @@ export default function UserSidebar() {
 
       setAlert({
         open: true,
-        message: `${coin.name} Removed from the Watchlist !`,
+        message: `${coin.name} Removed from the Watchlist!`,
         type: "success",
       });
     } catch (error) {
@@ -130,7 +139,6 @@ export default function UserSidebar() {
             style={{
               height: 38,
               width: 38,
-              //   marginLeft: 15,
               cursor: "pointer",
               backgroundColor: "#00C9C8",
             }}
@@ -141,6 +149,8 @@ export default function UserSidebar() {
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
+            // Assign the ref to the Drawer element
+            ref={drawerRef}
           >
             <div className={classes.container}>
               <div className={classes.profile}>
@@ -167,7 +177,7 @@ export default function UserSidebar() {
                   {coins.map((coin) => {
                     if (watchlist.includes(coin.id))
                       return (
-                        <div className={classes.coin}>
+                        <div key={coin.id} className={classes.coin}>
                           <span>{coin.name}</span>
                           <span style={{ display: "flex", gap: 8 }}>
                             {symbol}{" "}
@@ -181,8 +191,7 @@ export default function UserSidebar() {
                         </div>
                       );
                     else return <></>;
-                  }
-                  )}
+                  })}
                 </div>
               </div>
               <Button

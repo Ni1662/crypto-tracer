@@ -27,7 +27,7 @@ export const food = <i className="fa-solid fa-bowl-food"></i>
 export const medical = <i className="fa-solid fa-briefcase-medical"></i>
 export const tv = <i className="fa-solid fa-tv"></i>
 export const circle = <i className="fa-solid fa-circle-dot"></i>
-export const insta = <i class='fab fa-instagram'></i>
-export const fb = <i class='fab fa-facebook-f'></i>
-export const linkedin = <i class='fab fa-linkedin'></i>
-export const exchange = <i class='fas fa-money-bill-transfer'></i>
+export const insta = <i className='fab fa-instagram'></i>
+export const fb = <i className='fab fa-facebook-f'></i>
+export const linkedin = <i className='fab fa-linkedin'></i>
+export const exchange = <i className='fas fa-money-bill-transfer'></i>

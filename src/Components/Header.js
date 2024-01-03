@@ -160,18 +160,19 @@ const Header = () => {
                       >
                         Forex
                       </Button>
-                      <Button
-                        onClick={() => history.push("/contact")}
-                        className={`${classes.button} ${
-                          location.pathname === "/contact"
-                            ? classes.activeButton
-                            : ""
-                        }`}
-                      >
-                        Contact Us
-                      </Button>
+
                       {user && (
                         <>
+                          <Button
+                            onClick={() => history.push("/stock")}
+                            className={`${classes.button} ${
+                              location.pathname === "/stock"
+                                ? classes.activeButton
+                                : ""
+                            }`}
+                          >
+                            Stock
+                          </Button>
                           <Button
                             onClick={() => history.push("/news")}
                             className={`${classes.button} ${
@@ -198,6 +199,15 @@ const Header = () => {
                   </>
                 )}
 
+                <Button
+                  onClick={() => history.push("/contact")}
+                  className={`${classes.button} ${
+                    location.pathname === "/contact" ? classes.activeButton : ""
+                  }`}
+                >
+                  Contact Us
+                </Button>
+
                 <Select
                   variant="outlined"
                   style={{
@@ -205,8 +215,9 @@ const Header = () => {
                     height: 40,
                     marginRight: 15,
                     color: "white",
-                    // {isMobile?marginLeft: 150: marginLeft: 0}
-                    marginLeft: isMobile ? 0 : 150,
+                    marginLeft: user ? 50 : 150,
+                    // marginLeft: isMobile && 0s,
+
                   }}
                   value={currency}
                   onChange={(e) => setCurrency(e.target.value)}

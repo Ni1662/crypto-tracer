@@ -26,7 +26,7 @@ const ForexCard = () => {
   const handleViewChart = () => {
     setActive(2);
     // Scroll to the top of the page
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -37,6 +37,7 @@ const ForexCard = () => {
 
         <main className="z-10">{displayData()}</main>
       </div>
+
       <div>
         <h1 className={`${styles.heroHeadText} text-white mt-10  `}>
           Currency Convert Table

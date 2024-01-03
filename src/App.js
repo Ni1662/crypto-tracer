@@ -16,6 +16,7 @@ import OnboardPage from "./Pages/OnboardPage";
 import { useMemo } from "react";
 import Orb from "./Components/Orb";
 import News from "./Pages/News";
+import Stock from "./Pages/Stock";
 
 // const userStyles = makeStyles(() => ({
 //   App: {
@@ -49,8 +50,9 @@ function App() {
         <Route path="/onboard" component={OnboardPage} />
         {user ? (
           <>
-          <Route path="/news" component={News} exact />
-          <Route path="/profile" component={Profile} exact />
+            <Route path="/news" component={News} exact />
+            <Route path="/profile" component={Profile} exact />
+            <Route path="/stock" component={Stock} exact />
           </>
         ) : (
           <Redirect to="/" />

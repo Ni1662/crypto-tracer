@@ -38,7 +38,7 @@ export const ForexDate = [
 
 export const calculateDateRange = (period) => {
   const today = new Date();
-  today.setDate(today.getDate() - 2);
+  today.setDate(today.getDate() - 3);
   const endDate = today.toISOString().split("T")[0]; // Format: YYYY-MM-DD
 
   let startDate;
