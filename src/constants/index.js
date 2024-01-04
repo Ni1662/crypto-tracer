@@ -106,6 +106,48 @@ const currencies = [
     description:
       "The Australian Dollar is the currency of Australia. Our currency rankings show that the most popular Australian Dollar exchange rate is the AUD to USD rate. The currency code for Dollars is AUD, and the currency symbol is $. Above, you'll find Australian Dollar rates and a currency converter.",
   },
+  {
+    value: "CAD",
+    label: "Canadian Dollar",
+    img: "/assets/flag/CAD.svg",
+    description:
+      "The Canadian Dollar is the currency of Canada. Our currency rankings show that the most popular Canadian Dollar exchange rate is the CAD to USD rate. The currency code for Dollars is CAD, and the currency symbol is $. Below, you'll find Canadian Dollar rates and a currency converter.",
+  },
+  {
+    value: "JPY",
+    label: "Japanese Yen",
+    img: "/assets/flag/JPY.svg",
+    description:
+      "The Japanese Yen is the currency of Japan. Our currency rankings show that the most popular Japanese Yen exchange rate is the JPY to USD rate. The currency code for Yen is JPY, and the currency symbol is ¥. Below, you'll find Japanese Yen rates and a currency converter.",
+  },
+  {
+    value: "NZD",
+    label: "New Zealand Dollar",
+    img: "/assets/flag/NZD.svg",
+    description:
+      "The New Zealand Dollar is the currency of New Zealand. Our currency rankings show that the most popular New Zealand Dollar exchange rate is the NZD to USD rate. The currency code for Dollars is NZD, and the currency symbol is $. Below, you'll find New Zealand Dollar rates and a currency converter.",
+  },
+  {
+    value: "CHF",
+    label: "Swiss Franc",
+    img: "/assets/flag/CHF.svg",
+    description:
+      "The Swiss Franc is the currency of Switzerland. Our currency rankings show that the most popular Swiss Franc exchange rate is the CHF to USD rate. The currency code for Francs is CHF, and the currency symbol is CHF. Below, you'll find Swiss Franc rates and a currency converter.",
+  },
+  {
+    value: "ZAR",
+    label: "South African Rand",
+    img: "/assets/flag/ZAR.svg",
+    description:
+      "The South African Rand is the currency of South Africa. Our currency rankings show that the most popular South African Rand exchange rate is the ZAR to USD rate. The currency code for Rand is ZAR, and the currency symbol is R. Below, you'll find South African Rand rates and a currency converter.",
+  },
+  {
+    value: "RUB",
+    label: "Russian Ruble",
+    img: "/assets/flag/RUB.svg",
+    description:
+      "The Russian Ruble is the currency of Russia. Our currency rankings show that the most popular Russian Ruble exchange rate is the RUB to USD rate. The currency code for Rubles is RUB, and the currency symbol is ₽. Below, you'll find Russian Ruble rates and a currency converter.",
+  },
 ];
 
 export { services, teams, currencies };
