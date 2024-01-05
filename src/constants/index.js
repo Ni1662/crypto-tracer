@@ -169,6 +169,48 @@ const currencies = [
     description:
       "The Hong Kong Dollar is the currency of Hong Kong. Our currency rankings show that the most popular Hong Kong Dollar exchange rate is the HKD to USD rate. The currency code for Dollars is HKD, and the currency symbol is $. Below, you'll find Hong Kong Dollar rates and a currency converter.",
   },
+  {
+    value: "SEK",
+    label: "Swedish Krona",
+    img: "/assets/flag/SEK.svg",
+    description:
+      "The Swedish Krona is the currency of Sweden. Our currency rankings show that the most popular Swedish Krona exchange rate is the SEK to USD rate. The currency code for Kronor is SEK, and the currency symbol is kr. Below, you'll find Swedish Krona rates and a currency converter.",
+  },
+  {
+    value: "THB",
+    label: "Thai Baht",
+    img: "/assets/flag/THB.svg",
+    description:
+      "The Thai Baht is the currency of Thailand. Our currency rankings show that the most popular Thai Baht exchange rate is the THB to USD rate. The currency code for Baht is THB, and the currency symbol is ฿. Below, you'll find Thai Baht rates and a currency converter.",
+  },
+  {
+    value: "HUF",
+    label: "Hungarian Forint",
+    img: "/assets/flag/HUF.svg",
+    description:
+      "The Hungarian Forint is the currency of Hungary. Our currency rankings show that the most popular Hungarian Forint exchange rate is the HUF to USD rate. The currency code for Forints is HUF, and the currency symbol is Ft. Below, you'll find Hungarian Forint rates and a currency converter.",
+  },
+  {
+    value: "CNY",
+    label: "Chinese Yuan Renminbi",
+    img: "/assets/flag/CNY.svg",
+    description:
+      "The Chinese Yuan Renminbi is the currency of China. Our currency rankings show that the most popular Chinese Yuan Renminbi exchange rate is the CNY to USD rate. The currency code for Yuan Renminbi is CNY, and the currency symbol is ¥. Below, you'll find Chinese Yuan Renminbi rates and a currency converter.",
+  },
+  {
+    value: "NOK",
+    label: "Norwegian Krone",
+    img: "/assets/flag/NOK.svg",
+    description:
+      "The Norwegian Krone is the currency of Norway. Our currency rankings show that the most popular Norwegian Krone exchange rate is the NOK to USD rate. The currency code for Kroner is NOK, and the currency symbol is kr. Below, you'll find Norwegian Krone rates and a currency converter.",
+  },
+  {
+    value: "MXN",
+    label: "Mexican Peso",
+    img: "/assets/flag/MXN.svg",
+    description:
+      "The Mexican Peso is the currency of Mexico. Our currency rankings show that the most popular Mexican Peso exchange rate is the MXN to USD rate. The currency code for Pesos is MXN, and the currency symbol is $. Below, you'll find Mexican Peso rates and a currency converter.",
+  },
 ];
 
 export { services, teams, currencies };
