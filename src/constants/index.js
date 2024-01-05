@@ -148,6 +148,27 @@ const currencies = [
     description:
       "The Russian Ruble is the currency of Russia. Our currency rankings show that the most popular Russian Ruble exchange rate is the RUB to USD rate. The currency code for Rubles is RUB, and the currency symbol is ₽. Below, you'll find Russian Ruble rates and a currency converter.",
   },
+  {
+    value: "BGN",
+    label: "Bulgarian Lev",
+    img: "/assets/flag/BGN.svg",
+    description:
+      "The Bulgarian Lev is the currency of Bulgaria. Our currency rankings show that the most popular Bulgarian Lev exchange rate is the BGN to USD rate. The currency code for Leva is BGN, and the currency symbol is лв. Below, you'll find Bulgarian Lev rates and a currency converter.",
+  },
+  {
+    value: "SGD",
+    label: "Singapore Dollar",
+    img: "/assets/flag/SGD.svg",
+    description:
+      "The Singapore Dollar is the currency of Singapore. Our currency rankings show that the most popular Singapore Dollar exchange rate is the SGD to USD rate. The currency code for Dollars is SGD, and the currency symbol is S$. Below, you'll find Singapore Dollar rates and a currency converter.",
+  },
+  {
+    value: "HKD",
+    label: "Hong Kong Dollar",
+    img: "/assets/flag/HKD.svg",
+    description:
+      "The Hong Kong Dollar is the currency of Hong Kong. Our currency rankings show that the most popular Hong Kong Dollar exchange rate is the HKD to USD rate. The currency code for Dollars is HKD, and the currency symbol is $. Below, you'll find Hong Kong Dollar rates and a currency converter.",
+  },
 ];
 
 export { services, teams, currencies };
