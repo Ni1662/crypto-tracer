@@ -157,14 +157,6 @@ const OnboardPage = () => {
         // Add other fields you want to update here
       });
 
-      console.log({
-        uid: user.uid, // Assuming you have user data available
-        username: updatedUsername,
-        name: updatedName,
-        bio: updatedBio,
-        onboarded: true,
-      });
-
       if (response.data.user) {
         // Update the user data in your state/context
         setUserinfo(response.data.user);
@@ -179,13 +171,6 @@ const OnboardPage = () => {
       }
     } catch (error) {
       // Handle errors and display an error message to the user
-      console.log({
-        uid: user.uid, // Assuming you have user data available
-        username: updatedUsername,
-        name: updatedName,
-        bio: updatedBio,
-        onboarded: true,
-      });
       console.error("Error updating user details:", error);
       setAlert({
         open: true,
