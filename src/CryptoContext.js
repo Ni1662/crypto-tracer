@@ -23,20 +23,25 @@ const CryptoContext = ({ children }) => {
   const [currency, setCurrency] = useState("INR");
   const [symbol, setSymbol] = useState("₹");
   const [coins, setCoins] = useState([]);
+
   // forex (Foreign Exchange)
   const [baseCurrency, setBaseCurrency] = useState("INR");
   const [targetCurrency, setTargetCurrency] = useState("USD");
+
   // user and profile auth
   const [onboard, setOnboard] = useState(false);
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
   const [userinfo, setUserinfo] = useState(null);
+
   const [alert, setAlert] = useState({
     open: false,
     message: "",
     type: "success",
   });
+
   const [watchlist, setWatchlist] = useState([]);
+  
   const [incomes, setIncomes] = useState([]);
   const [expenses, setExpenses] = useState([]);
   const [error, setError] = useState(null);

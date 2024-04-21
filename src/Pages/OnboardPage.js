@@ -4,10 +4,9 @@ import React, { useEffect, useState } from "react";
 import { CryptoState } from "../CryptoContext";
 import { useHistory } from "react-router-dom";
 
-const USER_URL = "https://crypto-backend-roan.vercel.app/api/users/";
+const USER_URL = "https://crypto-backend-roan.vercel.app/api/users";
 
 // const USER_URL = "https://mirror-humble-chameleon.glitch.me/api/users/";
-
 
 const useStyles = makeStyles({
   container: {
@@ -113,7 +112,7 @@ const useStyles = makeStyles({
       borderBottomColor: "white",
     },
     "&:hover .MuiInput-underline:before": {
-      borderBottomColor: "#FCFCD4", 
+      borderBottomColor: "#FCFCD4",
     },
   },
 });
@@ -133,14 +132,18 @@ const OnboardPage = () => {
         const response = await axios.get(`${USER_URL}/getuser/${user.uid}`);
         const onboardedValue = response.data.onboarded;
         setOnboard(onboardedValue);
+        // console.log(user?.displayName);
+        setUpdatedName(user?.displayName);
+        setUpdatedUsername(user?.displayName);
       } catch (error) {
+        setOnboard(false);
         console.error("Error fetching user data:", error);
       }
     };
 
     fetchUser();
     onboard ? history.push("/") : history.push("/onboard");
-  }, [user?.uid, onboard, history, setOnboard]);
+  }, [user?.uid, user, onboard, history, setOnboard]);
 
   const handleUpdate = async () => {
     // Make an API request to update user details
@@ -152,6 +155,14 @@ const OnboardPage = () => {
         bio: updatedBio,
         onboarded: true, // Set 'onboarded' to true
         // Add other fields you want to update here
+      });
+
+      console.log({
+        uid: user.uid, // Assuming you have user data available
+        username: updatedUsername,
+        name: updatedName,
+        bio: updatedBio,
+        onboarded: true,
       });
 
       if (response.data.user) {
@@ -168,6 +179,13 @@ const OnboardPage = () => {
       }
     } catch (error) {
       // Handle errors and display an error message to the user
+      console.log({
+        uid: user.uid, // Assuming you have user data available
+        username: updatedUsername,
+        name: updatedName,
+        bio: updatedBio,
+        onboarded: true,
+      });
       console.error("Error updating user details:", error);
       setAlert({
         open: true,
@@ -188,13 +206,15 @@ const OnboardPage = () => {
         <TextField
           label="Username"
           value={updatedUsername || user?.displayName}
-          onChange={(e) => setUpdatedUsername(e.target.value)}
+          onChange={(e) =>
+            setUpdatedUsername(e.target.value) || user?.displayName
+          }
           className={classes.input}
         />
         <TextField
           label="Name"
           value={updatedName || user?.displayName}
-          onChange={(e) => setUpdatedName(e.target.value)}
+          onChange={(e) => setUpdatedName(e.target.value) || user?.displayName}
           className={classes.input}
         />
         <TextField
